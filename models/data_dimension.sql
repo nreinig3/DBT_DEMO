@@ -11,7 +11,7 @@ HOUR(TO_TIMESTAMP(STARTED_AT)) AS HOUR_STARTED_AT,
 {{get_season('STARTED_AT')}} AS SEASON_OF_YEAR
 
 
-FROM {{ source('demo', 'BIKE') }}
+from {{ ref('stg_bike') }}
 WHERE STARTED_AT != 'started_at'
 
 )
